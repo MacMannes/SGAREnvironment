@@ -67,10 +67,10 @@
     closeButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
     UIImage* closeImage = [UIImage imageNamed:@"SGCloseButton.png"];
     [closeButton setImage:closeImage forState:UIControlStateNormal];
-    closeButton.frame = CGRectMake(-5.0,
-                                   -7.0,
-                                   closeImage.size.width, 
-                                   closeImage.size.height);
+    closeButton.frame = CGRectMake(0.0,
+                                   0.0,
+                                   closeImage.size.width + 20, 
+                                   closeImage.size.height + 20);
     [self addSubview:closeButton];
     backgroundImageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"SGGlassTargetBackground.png"] stretchableImageWithLeftCapWidth:10.0 topCapHeight:20.0]];
     [self addSubview:backgroundImageView];
@@ -174,9 +174,9 @@
                                                      self.bounds.size.height - bottomExpandedBGImageView.frame.size.height,
                                                      topExpandedBGImageView.frame.size.width,
                                                      bottomExpandedBGImageView.frame.size.height);
-        middleExpandedBGImageView.frame = CGRectMake(-11.0,
+        middleExpandedBGImageView.frame = CGRectMake(-10.0,
                                                      topExpandedBGImageView.frame.size.height + topExpandedBGImageView.frame.origin.y,
-                                                     topExpandedBGImageView.frame.size.width + 2.0,
+                                                     topExpandedBGImageView.frame.size.width,
                                                      self.bounds.size.height - bottomExpandedBGImageView.frame.size.height - topExpandedBGImageView.frame.size.height + 10.0);
         
         [self addSubview:topExpandedBGImageView];
@@ -250,14 +250,13 @@
         [photoImageView removeFromSuperview];
         [closeButton removeFromSuperview];        
         
-            
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y,
-                                20.0 + targetImageView.frame.size.width,
-                                40.0 + targetImageView.frame.size.height);
+		self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y,
+								20.0 + targetImageView.frame.size.width,
+								40.0 + targetImageView.frame.size.height);
         
         backgroundImageView.frame = CGRectMake(-10.0, -5.0,
                                                self.bounds.size.width + 20.0,
-                                               self.bounds.size.height  + 20.0);
+                                               self.bounds.size.height  + 10.0);
         [self addSubview:backgroundImageView];
         
         targetImageView.frame = CGRectMake((self.frame.size.width - targetImageView.frame.size.width) / 2.0,
