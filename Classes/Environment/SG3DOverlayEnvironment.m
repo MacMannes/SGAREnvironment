@@ -172,6 +172,7 @@ int sortRecordByDistance(id view1, id view2, void* blah) {
 {
     fovy = 0.0f;
     [locationManager stopUpdatingHeading];
+    [locationManager stopUpdatingLocation];
     locationManager.delegate = nil;
 }
 
